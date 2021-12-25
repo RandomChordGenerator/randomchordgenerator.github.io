@@ -1,0 +1,47 @@
+.randomizer-config-value {
+  width: 200px;
+  padding: 2px;
+
+  display: flex;
+  align-items: center;
+}
+
+#page-title {
+  display: flex;
+  justify-content: center;
+}
+
+#content-display {
+  justify-content: center;
+}
+
+#randomizer-display-panel {
+  min-width: 600px;
+  /* background-color: #b5cde6; */
+}
+
+#randomizer-config-panel {
+  min-width: 200px;
+  /* background-color: #e6b9b5; */
+}
+
+.randomizer-config-toggle {
+  margin-left: auto;
+}
+
+.sequence-value {
+  text-align: center;
+  width: 100px;
+  margin: 20px;
+}
+
+#ranzomize-chords-btn {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sequence-row {
+  display: flex;
+  justify-content: center;
+}
