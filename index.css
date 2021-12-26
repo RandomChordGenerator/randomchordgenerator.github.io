@@ -15,7 +15,7 @@
 }
 
 #randomizer-config-panel {
-  min-width: 200px;
+  min-width: 250px;
   /* background-color: #e6b9b5; */
 }
 
@@ -24,8 +24,8 @@
 }
 
 .sequence-value {
-  font-size: 5.2vw;
-  margin: 2.0vw;
+  font-size: 8vw;
+  margin: 3.0vw;
 }
 
 #ranzomize-chords-btn {
