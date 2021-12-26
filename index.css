@@ -1,40 +1,41 @@
-.randomizer-config-value {
-  min-width: 200px;
-  padding: 2px;
-
-  display: flex;
-  align-items: center;
-}
-
 #content-display {
   justify-content: center;
+  margin-top: 3vmin;
 }
 
 #randomizer-display-panel {
   /* background-color: #b5cde6; */
+  width: 100vmin;
 }
 
 #randomizer-config-panel {
-  min-width: 250px;
-  /* background-color: #e6b9b5; */
+  min-width: 60vmin;
+  margin: 0 3vmin;
 }
 
 .randomizer-config-toggle {
   margin-left: auto;
 }
 
-.sequence-value {
-  font-size: 8vw;
-  margin: 3.0vw;
+.randomizer-config-value {
+  padding: 0.125em;
+  display: flex;
+  align-items: center;
 }
 
 #ranzomize-chords-btn {
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 0.3em;
+  font-size: 8vmin;
 }
 
-.sequence-row {
-  display: flex;
-  justify-content: center;
+#sequence-display-section {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sequence-value {
+  text-align: center;
+  font-size: 8vmin;
+  padding-bottom: 6vmin;
 }

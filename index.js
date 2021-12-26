@@ -14,6 +14,7 @@ $(document).ready(function() {
   function getChordPool() {
     var chordPool = [];
 
+    // Triad Config Checks
     if (document.getElementById('major-triads-toggle').checked) {
       chordPool = chordPool.concat(getDecoratedNotes(''));
     }
@@ -25,6 +26,20 @@ $(document).ready(function() {
     }
     if (document.getElementById('diminished-triads-toggle').checked) {
       chordPool = chordPool.concat(getDecoratedNotes('o'));
+    }
+
+    // 7th Chord Config Checks
+    if (document.getElementById('major-seventh-chords-toggle').checked) {
+      chordPool = chordPool.concat(getDecoratedNotes('△7'));
+    }
+    if (document.getElementById('dominant-seventh-chords-toggle').checked) {
+      chordPool = chordPool.concat(getDecoratedNotes('7'));
+    }
+    if (document.getElementById('minor-seventh-chords-toggle').checked) {
+      chordPool = chordPool.concat(getDecoratedNotes('-7'));
+    }
+    if (document.getElementById('diminished-seventh-chords-toggle').checked) {
+      chordPool = chordPool.concat(getDecoratedNotes('o7'));
     }
 
     console.log(chordPool);
@@ -47,26 +62,22 @@ $(document).ready(function() {
   function displayRandomSequence() {
     let chordPool = getChordPool();
 
-    // Clearing currently displayed sequence
-    let sequenceDisplaySection = $("#sequence-display-section");
-    sequenceDisplaySection.empty();
-
     if (chordPool.length === 0) {
       console.log("Warning: No Chords Selected");
-      let noChordsSelectedMessage = $("<div \>", {
-        class: 'h1',
-        text: 'No Chords Selected'
-      });
-      sequenceDisplaySection.append(noChordsSelectedMessage);
+      alert("No Chords Selected.")
     } else {
+      // Clearing currently displayed sequence
+      let sequenceDisplaySection = $("#sequence-display-section");
+      sequenceDisplaySection.empty();
+
       for (var i=0; i < 4; i++) {
-        let sequenceRow = $("<div \>", {
+        let sequenceRow = $("<tr \>", {
           class: 'sequence-row'
         });
         sequenceDisplaySection.append(sequenceRow);
 
         for (var j=0; j < 4; j++) {
-          let chordValue = $("<div \>", {
+          let chordValue = $("<td \>", {
             class: 'sequence-value',
             text: getRandomChord(chordPool)
           });
