@@ -67,7 +67,7 @@ $(document).ready(function() {
 
         for (var j=0; j < 4; j++) {
           let chordValue = $("<div \>", {
-            class: 'sequence-value h1',
+            class: 'sequence-value',
             text: getRandomChord(chordPool)
           });
           sequenceRow.append(chordValue);

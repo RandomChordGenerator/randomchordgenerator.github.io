@@ -1,14 +1,9 @@
 .randomizer-config-value {
-  width: 200px;
+  min-width: 200px;
   padding: 2px;
 
   display: flex;
   align-items: center;
-}
-
-#page-title {
-  display: flex;
-  justify-content: center;
 }
 
 #content-display {
@@ -16,7 +11,6 @@
 }
 
 #randomizer-display-panel {
-  min-width: 600px;
   /* background-color: #b5cde6; */
 }
 
@@ -30,9 +24,8 @@
 }
 
 .sequence-value {
-  text-align: center;
-  width: 100px;
-  margin: 20px;
+  font-size: 5.2vw;
+  margin: 2.0vw;
 }
 
 #ranzomize-chords-btn {
