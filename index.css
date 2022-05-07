@@ -39,3 +39,7 @@
   font-size: 8vmin;
   padding-bottom: 6vmin;
 }
+
+.randomizer-config-radio-group {
+  width: 100%;
+}
