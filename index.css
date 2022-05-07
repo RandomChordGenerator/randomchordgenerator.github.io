@@ -43,3 +43,12 @@
 .randomizer-config-radio-group {
   width: 100%;
 }
+
+.sequence-value-smaller-text {
+  font-size: 6vmin;
+}
+
+.sequence-value sup {
+  font-size: 60%;
+  top: -0.7em;
+}
