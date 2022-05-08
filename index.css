@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.top-labeled-config-value {
+  padding: 0.3em 0em;
+}
+
 #ranzomize-chords-btn {
   width: 100%;
   margin-bottom: 0.3em;
