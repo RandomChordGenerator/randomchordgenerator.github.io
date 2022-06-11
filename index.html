@@ -38,7 +38,31 @@
       </div>
 
       <div id="randomizer-config-panel">
+        <div id="pagination-controls" class="container">
+          <div class="row align-items-center">
+            <div id="pagination-back-div" class="col">
+              <button id="pagination-back-btn" type="button" class="btn btn-primary btn-lg pagination-directional-btn">🡄</button>
+            </div>
+            <div id="pagination-page-display" class="col">
+              <div id="pagination-page-text">
+                <!-- Page number display will be programatically added here when pagination is required. -->
+              </div>
+            </div>
+            <div id="pagination-forward-div" class="col">
+              <button id="pagination-forward-btn" type="button" class="btn btn-primary btn-lg pagination-directional-btn">🡆</button>
+            </div>
+          </div>
+        </div>
+
         <button id="ranzomize-chords-btn" type="button" class="btn btn-primary btn-lg">Randomize</button>
+
+        <!-- Flash Card Mode Toggle -->
+        <div class="randomizer-config-value">
+          Flash Card Mode
+          <div class="randomizer-config-toggle">
+            <input id="flash-card-mode-toggle" type="checkbox" data-toggle="toggle" data-size="lg">
+          </div>
+        </div>
 
         <!-- Triad Toggles -->
         <div class="randomizer-config-value">

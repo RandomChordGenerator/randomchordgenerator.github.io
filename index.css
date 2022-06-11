@@ -27,6 +27,34 @@
   padding: 0.3em 0em;
 }
 
+#pagination-controls {
+  display: none;
+}
+
+.pagination-directional-btn {
+  width: 100%;
+  margin-bottom: 0.3em;
+  font-size: 8vmin;
+}
+
+#pagination-back-div {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#pagination-forward-div {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#pagination-page-display {
+
+}
+
+#pagination-page-text {
+  text-align: center;
+}
+
 #ranzomize-chords-btn {
   width: 100%;
   margin-bottom: 0.3em;
@@ -55,4 +83,8 @@
 .sequence-value sup {
   font-size: 60%;
   top: -0.7em;
+}
+
+.empty-sequence-value {
+  opacity: 0;
 }
