@@ -4,14 +4,45 @@ $(function() {
   });
 
   $('#pagination-back-btn').click(function() {
-    storedIndex = storedIndex - CHORDS_PER_PAGE;
-    displaySequence(storedRandomSequence, storedIndex);
+    paginateBack();
+
   });
 
   $('#pagination-forward-btn').click(function() {
-    storedIndex = storedIndex + CHORDS_PER_PAGE;
-    displaySequence(storedRandomSequence, storedIndex);
+    paginateForward();
   });
+
+  // If the display area is clicked on the left or right, we will attempt to paginate.
+  $('#randomizer-display-panel').click(function(e) {
+    var pWidth = $(this).innerWidth();
+    var pOffset = $(this).offset();
+    var x = e.pageX - pOffset.left;
+    if((pWidth / 2) > x) {
+      paginateBack();
+    } else {
+      paginateForward();
+    }
+  });
+
+  let PAGINATION_INDICATOR_DELAY = 100;
+
+  function paginateBack() {
+    let newIndex = storedIndex - CHORDS_PER_PAGE;
+    if (newIndex >= 0) {
+      $('#randomizer-pagination-overlay-back').stop().clearQueue().fadeIn(PAGINATION_INDICATOR_DELAY).fadeOut();
+      storedIndex = newIndex;
+      displaySequence(storedRandomSequence, storedIndex);
+    }
+  }
+
+  function paginateForward() {
+    let newIndex = storedIndex + CHORDS_PER_PAGE;
+    if (newIndex < storedRandomSequence.length) {
+      $('#randomizer-pagination-overlay-forward').stop().clearQueue().fadeIn(PAGINATION_INDICATOR_DELAY).fadeOut();
+      storedIndex = newIndex;
+      displaySequence(storedRandomSequence, storedIndex);
+    }
+  }
 
   // There are 12 sounds in equal temperment
   let notesBySound = ['A♭', 'A',

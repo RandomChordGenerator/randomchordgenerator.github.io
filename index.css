@@ -4,8 +4,33 @@
 }
 
 #randomizer-display-panel {
-  /* background-color: #b5cde6; */
   width: 100vmin;
+
+  /* This allows us to have the pagination indicators aligned on the background */
+  position: relative;
+}
+
+.randomizer-pagination-overlay-indicator {
+  /* The display will be managed via javascript */
+  display: none;
+
+  /* Positioning the indicator to be shown behind content */
+  opacity: 0.4;
+  background-size:cover;
+  background-position:center;
+  position:absolute;
+  top:0; bottom:0; left:0; right:0;
+
+  /* Ensuring the indicator shows behind the displayed content */
+  z-index: -1;
+}
+
+#randomizer-pagination-overlay-back {
+  background-image: linear-gradient(to left, white 50%, rgba(0, 123, 255, 1));
+}
+
+#randomizer-pagination-overlay-forward {
+  background-image: linear-gradient(to right, white 50%, rgba(0, 123, 255, 1));
 }
 
 #randomizer-config-panel {
