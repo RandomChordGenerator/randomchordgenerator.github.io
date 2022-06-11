@@ -56,6 +56,10 @@
   display: none;
 }
 
+#pagination-page-display {
+  padding: 0;
+}
+
 .pagination-directional-btn {
   width: 100%;
   margin-bottom: 0.3em;
@@ -63,13 +67,13 @@
 }
 
 #pagination-back-div {
-  padding-right: 0px;
+  padding-right: 0.4em;
   padding-left: 0px;
 }
 
 #pagination-forward-div {
   padding-right: 0px;
-  padding-left: 0px;
+  padding-left: 0.4em;
 }
 
 #pagination-page-text {

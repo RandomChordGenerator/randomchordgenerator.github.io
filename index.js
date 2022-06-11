@@ -1,18 +1,31 @@
 $(function() {
+  /**
+   * Listener for the randomize button.
+   */
   $('#ranzomize-chords-btn').click(function() {
     generateAndDisplayRandomSequence();
   });
 
+  /**
+   * Listener for the back pagination button.
+   */
   $('#pagination-back-btn').click(function() {
     paginateBack();
 
   });
 
+  /**
+   * Listener for the forward pagination button.
+   */
   $('#pagination-forward-btn').click(function() {
     paginateForward();
   });
 
-  // If the display area is clicked on the left or right, we will attempt to paginate.
+  /**
+   * Listener for the display area, which will be used for pagination.
+   * If the chord display area is clicked/touched, we will attempt to paginate forwards or backwards depending on
+   * which side has been interacted with.
+   */
   $('#randomizer-display-panel').click(function(e) {
     var pWidth = $(this).innerWidth();
     var pOffset = $(this).offset();
@@ -26,6 +39,10 @@ $(function() {
 
   let PAGINATION_INDICATOR_DELAY = 100;
 
+  /**
+   * If the displayed sequence exceeds the page size, and we are not on the first page, this function will perform
+   * a backward pagination.
+   */
   function paginateBack() {
     let newIndex = storedIndex - CHORDS_PER_PAGE;
     if (newIndex >= 0) {
@@ -35,6 +52,10 @@ $(function() {
     }
   }
 
+  /**
+   * If the displayed sequence exceeds the page size, and we are not on the last page, this function will perform
+   * a forward pagination.
+   */
   function paginateForward() {
     let newIndex = storedIndex + CHORDS_PER_PAGE;
     if (newIndex < storedRandomSequence.length) {
@@ -71,7 +92,7 @@ $(function() {
                         'F', 'F♭', 'F♯',
                         'G', 'G♭', 'G♯'];
 
-  // Enum like values to support chord modifier display inputs
+  // Enum-like values to support chord modifier display inputs
   let CHORD_MODIFIER_DISPLAY_SYMBOLS = 'CHORD_MODIFIER_DISPLAY_SYMBOLS';
   let CHORD_MODIFIER_DISPLAY_LETTERS = 'CHORD_MODIFIER_DISPLAY_LETTERS';
   let CHORD_MODIFIER_DISPLAY_RANDOM = 'CHORD_MODIFIER_DISPLAY_RANDOM';
@@ -85,6 +106,9 @@ $(function() {
   var storedRandomSequence = [];
   var storedIndex = 0;
 
+  /**
+   * Checks the Chord Modifier Display Type input, and returns an enum-like value representing the input.
+   */
   function getChordModifierDisplayType() {
     var chordModifierDisplayType;
 
@@ -97,7 +121,7 @@ $(function() {
     } else {
       // The only way this should be reached is if a new option was added, but this method was not updated.
       console.log('Warning: Unsupported Chord Modifier Display Type Selected.');
-      alert('Warning: No Chord Display Type Selected');
+      alert('No Chord Display Type Selected. Please select a Chord Modifier Display Type.');
     }
 
     // If the input selected was 'Random', we must randomize what we will use for this execution.
@@ -123,6 +147,9 @@ $(function() {
     });
   }
 
+  /**
+   * Checks the triad/chord inputs, and constructs/returns the corresponding chord modifiers.
+   */
   function getChordModifiers() {
     var chordModifiers = [];
 
@@ -189,13 +216,16 @@ $(function() {
     if (chordModifiers.length === 0) {
       // At least one chord configuration must be selected
       console.log('Warning: No Chords Selected');
-      alert('Warning: No Chords Selected.');
+      alert('No Chords Selected. Please enable at least 1 triad/chord set.');
       return;
     }
 
     return chordModifiers;
   }
 
+  /**
+   * Checks for the note pool input, and fetches the corresponding note pool list.
+   */
   function getNotePool(decoration) {
     var notePool;
     if (document.getElementById('note-pool-12-radio').classList.contains('active')) {
@@ -207,7 +237,7 @@ $(function() {
     } else {
       // The only way this should be reached is if a new option was added, but this method was not updated.
       console.log('Warning: Unsupported Note Pool Option Selected.');
-      alert('Warning: No Notes Selected');
+      alert('No notes selected. Please select a set of notes from the Note Pool Selector.');
     }
 
     return notePool;
@@ -231,6 +261,10 @@ $(function() {
     displaySequence(chordSequence, 0);
   }
 
+  /**
+   * Generates a sequence of chords, where the number is equal to what can be displayed on one page.
+   * Duplicate chords can exist in the returned sequence.
+   */
   function generateNormalSequence() {
     let notePool = getNotePool();
     let chordModifiers = getChordModifiers();
@@ -253,6 +287,11 @@ $(function() {
     return chordSequence;
   }
 
+  /**
+   * Generates a sequence of chords, where each combination of note and chord modifier has been enumerated.
+   * The size of the set will increase as the number of modifiers requested increases.
+   * The returned sequence will be in random order and will have no duplicate values.
+   */
   function generateFlashCardSequence() {
     let notePool = getNotePool();
     let chordModifiers = getChordModifiers();
@@ -281,7 +320,10 @@ $(function() {
     return chordSequence;
   }
 
-  // TODO: Remove this function
+  /**
+   * Displays the given sequence starting at the specified index.
+   * This function will enable and update pagination controls if the number in the set exceeds the page size.
+   */
   function displaySequence(chordSequence, startIndex) {
     if (chordSequence.length > CHORDS_PER_PAGE) {
       // Display page count
