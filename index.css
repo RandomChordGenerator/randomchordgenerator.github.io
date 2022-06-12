@@ -15,7 +15,7 @@
   display: none;
 
   /* Round the corners */
-  border-radius: 6rem;
+  border-radius: 2em;
 
   /* Positioning the indicator to be shown behind content */
   opacity: 0.4;
