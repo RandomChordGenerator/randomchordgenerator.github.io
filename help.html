@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap Library: https://getbootstrap.com/docs/4.6/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Toggle: https://gitbrent.github.io/bootstrap4-toggle/ -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <!-- Bootstrap ToC: https://afeld.github.io/bootstrap-toc/ -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+    <!-- Page CSS -->
+    <link href="index.css" rel="stylesheet">
+
+    <!-- Page JS -->
+    <script src="index.js"></script>
+
+    <title>Random Chord Generator</title>
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">
+        Random Chord Generator
+      </a>
+    </nav>
+
+    <div id="content-display" class="container">
+      <div class="row">
+        <div class="col">
+          <a href="index.html">Take Me Back to the Randomizer</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1>Help - How do I use the settings/options?</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <nav id="toc" data-toggle="toc" class="sticky-top">Help Sections</nav>
+        </div>
+        <div class="col-lg-9">
+          <div id="setting-descriptions">
+            <h2>Normal Mode vs Flash Card Mode</h2>
+            <b>Normal Mode Description</b>
+            <p>In Normal Mode, which is the default mode, the page will be filled with a random selection of chords/triads, drawn from a set defined by the various used defined inputs. This set may include duplicate chords.</p>
+            <b>Flash Card Mode Description</b>
+            <p>
+              In Flash Card Mode, all possible chord/triad values for the given input will be returned in a randomized order.
+              If the size of the set is larger than the page size, pagination buttons and gestures can be used to move through the set.
+              This set will not include any duplicate chords.
+            </p>
+
+            <h2>Chord Quality Toggles</h2>
+            There are several toggle switches that can be used to enable/disable various chord qualities. These are:
+            <ul>
+              <li>
+                <b>Major Triads</b> - A triad consisting of the root, major third, and perfect 5th. For example: 'C' - 'E' - 'G'
+                <ul>
+                  <li>
+                    Symbol Example: 'C'
+                  </li>
+                  <li>
+                    Letter Example: 'C'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Minor Triads</b> - A triad consisting of the root, minor third, and perfect 5th. For example: 'C' - 'E♭' - 'G'
+                <ul>
+                  <li>
+                    Symbol Example: 'C-'
+                  </li>
+                  <li>
+                    Letter Example: 'Cm'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Augmented Triads</b> - A triad consisting of the root, minor third, and raised/augmented 5th. For example: 'C' - 'E' - 'G♯'
+                <ul>
+                  <li>
+                    Symbol Example: 'C+'
+                  </li>
+                  <li>
+                    Letter Example: 'Caug'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Diminished Triads</b> - A triad consisting of the root, minor third, and minor 5th. For example: 'C' - 'E♭' - 'G♭'
+                <ul>
+                  <li>
+                    Symbol Example: 'C°'
+                  </li>
+                  <li>
+                    Letter Example: 'Cdim'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Sus4 Triads</b> - A triad consisting of the root, fourth, and perfect 5th. For example: 'C' - 'F' - 'G'
+                <ul>
+                  <li>
+                    Symbol Example: 'Csus'
+                  </li>
+                  <li>
+                    Letter Example: 'Csus'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Sus2 Triads</b> -  A triad consisting of the root, second, and perfect 5th. For example: 'C' - 'F' - 'G'
+                <ul>
+                  <li>
+                    Symbol Example: 'Csus2'
+                  </li>
+                  <li>
+                    Letter Example: 'Csus2'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Major 7th Chords</b> - A chord consisting of the root, major third, perfect 5th, and seventh. For example: 'C' - 'E' - 'G' - 'B'
+                <ul>
+                  <li>
+                    Symbol Example: 'C△7'
+                  </li>
+                  <li>
+                    Letter Example: 'CM7'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Dominant 7th Chords</b> - A chord consisting of the root, major third, perfect 5th, and minor seventh. For example: 'C' - 'E' - 'G' - 'B♭'
+                <ul>
+                  <li>
+                    Symbol Example: 'C7'
+                  </li>
+                  <li>
+                    Letter Example: 'C7'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Minor 7th Chords</b> - A chord consisting of the root, minor third, perfect 5th, and minor seventh. For example: 'C' - 'E♭' - 'G' - 'B♭'
+                <ul>
+                  <li>
+                    Symbol Example: 'C-7'
+                  </li>
+                  <li>
+                    Letter Example: 'Cm7'
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Diminished 7th Chords</b> - A chord consisting of the root, minor third, diminished 5th, and diminished 7th seventh. For example: 'C' - 'E♭' - 'G♭' - 'B♭♭'
+                <ul>
+                  <li>
+                    Symbol Example: 'C°7'
+                  </li>
+                  <li>
+                    Letter Example: 'Cdim7'
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <h2>Note Pool Selector</h2>
+            <p>
+            The Note Pool Selector allows you to select the notes for your chords:
+            </p>
+            <ul>
+              <li>
+                <b>12 Sounds</b> - There are 12 sounds in equal temperment: 'A♭', 'A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G'
+              </li>
+              <li>
+                <b>15 Keys</b> - There are 15 keys. 6 of these keys overlap one another: 'B' & 'C♭', 'C♯' & 'D♭', 'F♯' & 'G♭'
+              </li>
+              <li>
+                <b>21 Symbols</b> - There are 21 symbols in total. This includes symbols that don't correspond to key signatures, such as 'B♯'
+              </li>
+            </ul>
+
+            <h2>Chord Modifier Display Type</h2>
+            <p>
+              You can select how chord modifiers are displayed for randomized chords with the following options:
+            </p>
+            <ul>
+              <li>
+                <b>Symbols</b> - This option will cause symbols to be used for the modifier that appears after a chord. For example, C flat augmented would be displayed as: 'C♭+'
+              </li>
+              <li>
+                <b>Letters</b> - This option will cause letters to be used for the modifier that appears after a chord. For example, C flat augmented would be displayed as: 'C♭aug'
+              </li>
+              <li>
+                <b>Random</b> - This option will randomly select either Symbols or Letters each time the Randomize button is pressed. This allows you to easily practice with both sets.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
